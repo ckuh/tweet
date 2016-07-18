@@ -1,0 +1,8 @@
+.tweetUserInput {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 32px;
+  width: 95%;
+  text-align: center;
+}

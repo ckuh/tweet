@@ -3,7 +3,11 @@
 
   angular
   .module('tweet.dependencies', [
-    'ui.router'
+    'ui.router',
+    'ngAnimate',
+    'ngAria',
+    'ngMaterial',
+    'ngMessages'
   ])
 
 })();
