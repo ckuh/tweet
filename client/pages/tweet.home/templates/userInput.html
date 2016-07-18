@@ -1,5 +1,7 @@
 <div layout="row" layout-align="center" layout-padding>
   <md-content>
-      <input class="tweetUserInput" type="text" name="userName" placeholder="User Name">
+    <form name="userInput" ng-submit="getTweets({userName: user.name})">
+      <input class="tweetUserInput" type="text" name="userName" placeholder="User Name" ng-model="user.name">
+    </form>
   </md-content>
 </div>

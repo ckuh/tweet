@@ -8,14 +8,17 @@
     function tweetUserInput() {
       var directive = {
         link: link,
+        scope: {
+          getTweets: '&'
+        },
         templateUrl: '../pages/tweet.home/templates/userInput.html',
-        restrict: 'EA'
+        restrict: 'E'
       };
 
       return directive;
 
       function link(scope, element, attrs) {
-
+        
       }
     }
 
