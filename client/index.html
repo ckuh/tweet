@@ -4,7 +4,18 @@
     <meta charset="utf-8">
     <title>Tweet</title>
   </head>
-  <body>
+  <body ng-app="tweet">
     <h1>Hello World</h1>
+    <ui-view></ui-view>
+
+    <!-- Lib -->
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- App Config -->
+    <script src="./app/app.modules.js"></script>
+    <script src="./app/app.dependencies.js"></script>
+    <script src="./app/app.config.js"></script>
+    <script src="./app/app.run.js"></script>
   </body>
 </html>
