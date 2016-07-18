@@ -3,7 +3,8 @@
 
   angular
   .module('tweet', [
-    'tweet.dependencies'
+    'tweet.dependencies',
+    'tweet.home'
   ])
 
 })();
