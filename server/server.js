@@ -2,6 +2,9 @@ var express = require('express');
 var bodyParse = require('body-parser');
 var app = express();
 
+//routes
+var routeTweets = require('./routes/routeTweets.js')
+
 app.use(bodyParse.json());
 
 app.use(function(req, res, next) {
@@ -14,6 +17,7 @@ app.use(function(req, res, next) {
 app.set('port', process.env.port || 1337);
 
 app.use(express.static('./client'));
+app.use('/api/tweets', routeTweets);
 
 app.listen(app.get('port'), function() {
   console.log('Express Server listening on port ', app.get('port'));
