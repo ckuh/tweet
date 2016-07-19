@@ -26,7 +26,6 @@
         }
 
         function getTweetsFailed (error) {
-          console.error('Failed for links: ', error);
           return $q.reject(error);
         }
       }

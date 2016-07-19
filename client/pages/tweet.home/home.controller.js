@@ -10,11 +10,11 @@
 
       vm.getTweets = function(userName) {
         Home.getTweets(userName)
-          .catch(function(err){
-            console.error('error: ', err);
-          })
           .then(function(data){
             console.log('data: ', data);
+          })
+          .catch(function(err){
+            console.error('error: ', err.data[0].message);
           })
       }
     }
