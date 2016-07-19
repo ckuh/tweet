@@ -10,7 +10,7 @@ exports.get = function(query) {
       }
 
       resolve(_.map(tweets, function(tweet) {
-        return _.pick(tweet, 'created_at', 'test', 'user', 'retweeted_status')
+        return _.pick(tweet, 'created_at', 'text', 'user', 'retweeted_status')
       }))
     })
   });
