@@ -7,18 +7,25 @@
 
     function tweetUserInput() {
       var directive = {
-        link: link,
         scope: {
           getTweets: '&'
         },
         templateUrl: '../pages/tweet.home/templates/userInput.html',
-        restrict: 'E'
+        restrict: 'E',
+        controller: tweetUserInputCtrl,
+        controllerAs: 'vm'
       };
 
       return directive;
+    }
 
-      function link(scope, element, attrs) {
-        
+    tweetUserInputCtrl.$inject = [];
+
+    function tweetUserInputCtrl() {
+      var vm = this;
+
+      vm.removeSpace = function() {
+        vm.userName = vm.userName.split(' ').join('');
       }
     }
 
