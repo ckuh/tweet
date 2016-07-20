@@ -5,7 +5,7 @@ exports.user = {
 }
 
 function userGet(req, res) {
-  console.log('inside twitter.controller.js user.get: ', req.query);
+  console.log('inside twitter.controller.js user.get: ', req.query, req.url);
   model.user.get(req.query)
   .then(function(data) {
     res.status(200).json(data);
@@ -21,7 +21,7 @@ exports.word = {
 }
 
 function wordGet(req, res) {
-  console.log('inside twitter.controller.js word.get: ', req.query);
+  console.log('inside twitter.controller.js word.get: ', req.query, req.url);
   model.word.get(req.query)
   .then(function(data) {
     res.status(200).json(data);
