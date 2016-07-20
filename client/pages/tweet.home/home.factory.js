@@ -7,7 +7,8 @@
 
     function Home($http, $q) {
       var service = {
-        getTweets: getTweets
+        getTweets: getTweets,
+        getSentiment: getSentiment
       };
 
       function getTweets(userName) {
@@ -21,14 +22,34 @@
             .then(getTweetsComplete)
             .catch(getTweetsFailed);
 
-        function getTweetsComplete (response) {
+        function getTweetsComplete(response) {
           return response.data;
         }
 
-        function getTweetsFailed (error) {
+        function getTweetsFailed(error) {
           return $q.reject(error);
         }
       }
+
+      function getSentiment(tweets) {
+        return $http({
+          method: 'POST',
+          url: '/api/indico',
+          data: tweets
+        })
+        .then(getSentimentComplete)
+        .catch(getSentimentFailed);
+
+        function getSentimentComplete(response) {
+          return response;
+        }
+
+        function getSentimentFailed(error) {
+          console.error('Failed for links: ', error);
+          return $q.reject(error);
+        }
+      }
+
       return service;
     }
 
