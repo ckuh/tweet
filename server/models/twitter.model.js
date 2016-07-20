@@ -1,4 +1,4 @@
-var Twitter = require('../config/config.js');
+var Twitter = require('../config/twitter.config.js');
 var _ = require('underscore');
 
 exports.get = function(query) {

@@ -3,7 +3,8 @@ var bodyParse = require('body-parser');
 var app = express();
 
 //routes
-var routeTweets = require('./routes/routeTweets.js')
+var routeTweets = require('./routes/routeTweets.js');
+var routeIndico = require('./routes/routeIndico.js');
 
 app.use(bodyParse.json());
 
@@ -18,6 +19,7 @@ app.set('port', process.env.port || 1337);
 
 app.use(express.static('./client'));
 app.use('/api/tweets', routeTweets);
+app.use('/api/indico', routeIndico);
 
 app.listen(app.get('port'), function() {
   console.log('Express Server listening on port ', app.get('port'));

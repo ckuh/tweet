@@ -1,4 +1,8 @@
+//twitter
 process.env.TWITTER_CONSUMER_KEY = 'YOUR KEY HERE';
 process.env.TWITTER_CONSUMER_SECRET = 'YOUR KEY HERE';
 process.env.TWITTER_ACCESS_TOKEN_KEY = 'YOUR KEY HERE';
 process.env.TWITTER_ACCESS_TOKEN_SECRET = 'YOUR KEY HERE';
+
+//indico
+process.env.INDICO_API_KEY = 'YOUR KEY HERE';

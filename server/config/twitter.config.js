@@ -1,4 +1,4 @@
-require('./keys.js')
+require('./keys.js');
 var Twitter = require('twitter');
 
 module.exports = new Twitter({
