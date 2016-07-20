@@ -1,0 +1,8 @@
+<md-content layout-padding>
+  <md-virtual-repeat-container id="vertical-container">
+    <div md-virtual-repeat="tweet in vm.tweets"
+        class="repeated-item">
+        <span ng-bind-html="tweet.text | linky"></span>
+    </div>
+  </md-virtual-repeat-container>
+</md-content>

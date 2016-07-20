@@ -7,7 +7,8 @@
     'ngAnimate',
     'ngAria',
     'ngMaterial',
-    'ngMessages'
+    'ngMessages',
+    'ngSanitize'
   ])
 
 })();

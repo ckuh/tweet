@@ -6,3 +6,21 @@
   width: 95%;
   text-align: center;
 }
+
+#vertical-container {
+  height: 400px;
+}
+
+.repeated-item {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  min-height: 40px;
+}
+
+md-virtual-repeat-container {
+  border: solid 1px grey;
+}
+
+.md-virtual-repeat-container .md-virtual-repeat-offsetter div {
+  padding: 10px;
+}

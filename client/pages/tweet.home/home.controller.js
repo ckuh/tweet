@@ -7,14 +7,19 @@
 
     function HomeController(Home) {
       var vm = this;
+      vm.tweetsLoaded = false;
+      vm.tweets = {}
 
       vm.getTweets = function(userName) {
         Home.getTweets(userName)
           .then(function(data){
             console.log('data: ', data);
+            vm.tweetsLoaded = true;
+            vm.tweets = data;
           })
           .catch(function(err){
-            console.error('error: ', err.data[0].message);
+            vm.tweetsLoaded = false;
+            console.error('error: ', err);
           })
       }
     }
