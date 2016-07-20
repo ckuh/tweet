@@ -14,7 +14,7 @@
       function getTweets(userName) {
         return $http({
             method: 'GET',
-            url: '/api/tweets',
+            url: '/api/tweets/user',
             params: {
               userName: userName
             }
