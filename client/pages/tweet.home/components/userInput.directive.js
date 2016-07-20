@@ -23,10 +23,12 @@
 
     function tweetUserInputCtrl() {
       var vm = this;
+      vm.items = ['User Name', 'Key Word'];
+      vm.selectedItem = vm.items[0]
 
       vm.removeSpace = function() {
         vm.userName = vm.userName.split(' ').join('');
-      }
+      };
     }
 
 })();

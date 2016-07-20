@@ -10,8 +10,16 @@
       vm.tweetsLoaded = false;
       vm.tweets = {}
 
-      vm.getTweets = function(userName) {
-        Home.getTweets(userName)
+      vm.getTweets = function(userInput, query) {
+        query = query.split(' ').map(function(item, index){
+          if(index === 0) {
+            return item.toLowerCase();
+          } else {
+            return item.charAt(0).toUpperCase() + item.slice(1);
+          }
+        }).join('');
+
+        Home.getTweets(userInput, query)
           .then(function(data) {
             console.log('data: ', data);
             vm.tweetsLoaded = true;

@@ -11,12 +11,12 @@
         getSentiment: getSentiment
       };
 
-      function getTweets(userName) {
+      function getTweets(userInput, query) {
         return $http({
             method: 'GET',
-            url: '/api/tweets/user',
+            url: '/api/tweets/' + query,
             params: {
-              userName: userName
+              userInput: userInput
             }
           })
             .then(getTweetsComplete)

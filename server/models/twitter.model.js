@@ -8,7 +8,7 @@ exports.user = {
 function userGet(query) {
   console.log('inside twitter.model.js user.get')
   return new Promise(function(resolve, reject) {
-    Twitter.get('statuses/user_timeline', {screen_name: query.userName, count: query.count}, function(error, tweets, response) {
+    Twitter.get('statuses/user_timeline', {screen_name: query.userInput, count: query.count || 10}, function(error, tweets, response) {
       if(error){
         reject(error)
       } else {
@@ -30,16 +30,17 @@ exports.word = {
 function wordGet(query) {
   console.log('inside twitter.model.js word.get')
   return new Promise(function(resolve, reject) {
-    Twitter.get('search/tweets', {q: query.string, count: query.count}, function(error, tweets, response) {
+    Twitter.get('search/tweets', {q: query.userInput, count: query.count || 10, lang: 'en'}, function(error, tweets, response) {
       if(error){
         reject(error)
       } else {
         var filteredTweets = _.map(tweets.statuses, function(tweet) {
           return _.pick(tweet, 'created_at', 'text', 'user', 'retweeted_status');
         })
-        resolve(_.reject(filteredTweets, function(currentTweet){
-          return 'retweeted_status' in currentTweet;
-        }));
+
+        filteredTweets = _.uniq(filteredTweets);
+
+        resolve(filteredTweets);
       }
     })
   });

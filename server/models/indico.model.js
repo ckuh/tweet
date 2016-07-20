@@ -5,13 +5,13 @@ exports.post = function(params) {
   return new Promise(function(resolve, reject) {
     var batchInput = _.pluck(params, 'text');
 
-    Indico.sentiment(batchInput)
+    Indico.sentimentHQ(batchInput)
       .then(function(res){
         var totalSentiment = 0;
         _.each(res, function(currentSentiment) {
           totalSentiment += currentSentiment;
         })
-        
+
         resolve({sentimentValue: totalSentiment / res.length});
       })
       .catch(function(err){

@@ -19,6 +19,10 @@
   text-align: center;
 }
 
+#userInputRadio {
+  width: 145px;
+}
+
 /*userTweets*/
 
 #vertical-container {

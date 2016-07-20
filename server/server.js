@@ -6,7 +6,7 @@ var app = express();
 var routeTweets = require('./routes/routeTweets.js');
 var routeIndico = require('./routes/routeIndico.js');
 
-app.use(bodyParse.json());
+app.use(bodyParse.json({limit: '50mb'}));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');

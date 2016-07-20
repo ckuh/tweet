@@ -1,7 +1,15 @@
-<div layout="row" layout-align="center" layout-padding>
+<div layout="column" layout-align="center center" layout-padding>
   <md-content>
-    <form name="userInput" ng-submit="getTweets({userName: vm.userName})">
+    <form name="userInput" ng-submit="getTweets({userName: vm.userName, selectedItem: vm.selectedItem})">
       <input class="tweetUserInput" type="text" name="userName" placeholder="User Name" ng-model="vm.userName" ng-change="vm.removeSpace()" ng-trim=false>
     </form>
+  </md-content>
+
+  <md-content id="userInputRadio">
+    <md-select ng-model="vm.selectedItem">
+      <md-optgroup label="Query Types">
+        <md-option ng-value="item" ng-repeat="item in vm.items">{{item}}</md-option>
+      </md-optgroup>
+    </md-select>
   </md-content>
 </div>
