@@ -1,7 +1,9 @@
-<div>
-  <tweet-user-input get-tweets="vm.getTweets(userName)"><tweet-user-input>
-</div>
+<div class="tweetContainer" layout="column" layout-align="center center">
+  <div class="tweetChild">
+    <tweet-user-input get-tweets="vm.getTweets(userName)"><tweet-user-input>
+  </div>
 
-<div ng-if="vm.tweetsLoaded" >
-  <tweet-user-tweets tweets="vm.tweets"></tweet-user-tweets>
+  <div ng-if="vm.tweetsLoaded" class="tweetChild">
+    <tweet-user-tweets tweets="vm.tweets"></tweet-user-tweets>
+  </div>
 </div>

@@ -1,3 +1,15 @@
+/*home*/
+
+.tweetContainer {
+  height: 100%;
+}
+
+.tweetChild {
+  width: 100%;
+}
+
+/*userInput*/
+
 .tweetUserInput {
   border: none;
   outline: none;
@@ -7,8 +19,11 @@
   text-align: center;
 }
 
+/*userTweets*/
+
 #vertical-container {
   height: 400px;
+  width: 100%;
 }
 
 .repeated-item {
