@@ -41,7 +41,7 @@
         .catch(getSentimentFailed);
 
         function getSentimentComplete(response) {
-          return response;
+          return response.data;
         }
 
         function getSentimentFailed(error) {

@@ -1,4 +1,8 @@
 <div class="tweetContainer" layout="column" layout-align="center center">
+  <div ng-if="vm.sentimentLoaded" class="tweetChild">
+    <tweet-sentiment-value sentiment-value="vm.sentimentValue"></tweet-sentiment-value>
+  </div>
+
   <div class="tweetChild">
     <tweet-user-input get-tweets="vm.getTweets(userName, selectedItem)"><tweet-user-input>
   </div>

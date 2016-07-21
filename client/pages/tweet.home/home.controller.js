@@ -8,6 +8,7 @@
     function HomeController(Home) {
       var vm = this;
       vm.tweetsLoaded = false;
+      vm.sentimentLoaded = false;
       vm.tweets = {}
 
       vm.getTweets = function(userInput, query) {
@@ -28,6 +29,8 @@
             Home.getSentiment(vm.tweets)
               .then(function(data) {
                 console.log('data: ', data);
+                vm.sentimentLoaded = true;
+                vm.sentimentValue = data.sentimentValue;
               })
               .catch(function(err) {
                 console.error('error: ', err);
