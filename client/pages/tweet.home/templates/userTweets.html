@@ -2,6 +2,7 @@
   <md-virtual-repeat-container id="vertical-container">
     <div md-virtual-repeat="tweet in vm.tweets"
         class="repeated-item" flex>
+        <span class="tweetUsername">{{tweet.user.name}}: </span>
         <span ng-bind-html="tweet.text | linky"></span>
     </div>
   </md-virtual-repeat-container>

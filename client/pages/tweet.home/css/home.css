@@ -23,7 +23,10 @@
   width: 145px;
 }
 
-/*userTweets*/
+/*tweets*/
+.tweetsUsername {
+  font-weight: bold;
+}
 
 #vertical-container {
   height: 400px;
