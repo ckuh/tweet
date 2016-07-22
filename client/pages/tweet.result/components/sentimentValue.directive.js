@@ -10,7 +10,7 @@
         scope: {
           sentimentValue: '='
         },
-        templateUrl: '../pages/tweet.home/templates/sentimentValue.html',
+        templateUrl: '../pages/tweet.result/templates/sentimentValue.html',
         restrict: 'E',
         controller: tweetSentimentValueCtrl,
         controllerAs: 'vm',

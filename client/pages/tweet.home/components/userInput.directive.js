@@ -28,7 +28,7 @@
       vm.curSelectedItem = vm.selectedItem;
 
       vm.removeSpace = function() {
-        if(vm.selectedItem === vm.items[0]){
+        if(vm.selectedItem === vm.items[0]) {
           vm.userName = vm.userName.split(' ').join('');
         }
       };

@@ -1,0 +1,13 @@
+<div class="tweetContainer" layout="column" layout-align="center center">
+  <div class="tweetChild">
+    <tweet-sentiment-value sentiment-value="vm.sentimentValue"></tweet-sentiment-value>
+  </div>
+
+  <div class="tweetChild" layout="column" layout-align="center center">
+    <h1 class=".md-display-3">{{vm.userInput}}</h1>
+  </div>
+
+  <div class="tweetChild">
+    <tweet-user-tweets tweets="vm.tweets"></tweet-user-tweets>
+  </div>
+</div>

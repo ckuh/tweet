@@ -10,7 +10,7 @@
         scope: {
           tweets: '='
         },
-        templateUrl: '../pages/tweet.home/templates/userTweets.html',
+        templateUrl: '../pages/tweet.result/templates/userTweets.html',
         restrict: 'E',
         controller: tweetUserTweetsCtrl,
         controllerAs: 'vm',

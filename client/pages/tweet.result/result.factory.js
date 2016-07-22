@@ -7,7 +7,9 @@
 
     function Result() {
       var service = {
-
+        tweets: {},
+        sentimentValue: {},
+        query: ''
       };
 
       return service;
