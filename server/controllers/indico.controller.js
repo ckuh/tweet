@@ -6,7 +6,7 @@ exports.sentiment = {
 
 function sentiementPost(req, res) {
   console.log('inside indico.controller.js sentiement post: ');
-  model.sentiement.post(req.body)
+  model.sentiment.post(req.body)
     .then(function(data) {
       res.status(200).json(data);
     })

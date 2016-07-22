@@ -34,7 +34,7 @@
       function getSentiment(tweets) {
         return $http({
           method: 'POST',
-          url: '/api/indico',
+          url: '/api/indico/sentiment',
           data: tweets
         })
         .then(getSentimentComplete)
