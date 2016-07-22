@@ -4,7 +4,8 @@
   angular
   .module('tweet', [
     'tweet.dependencies',
-    'tweet.home'
+    'tweet.home',
+    'tweet.result'
   ])
 
 })();

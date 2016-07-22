@@ -13,6 +13,12 @@
         templateUrl: '../pages/tweet.home/templates/home.html',
         controller: 'HomeController as vm'
       })
+      .state('result', {
+        url: '/result',
+        auth: false,
+        templateUrl: '../pages/tweet.result/templates/result.html',
+        controller: 'ResultController as vm'
+      })
 
       $urlRouterProvider
         .otherwise('/home');
