@@ -6,7 +6,7 @@
   </md-content>
 
   <md-content id="userInputRadio">
-    <md-select ng-model="vm.selectedItem" aria-label="Query Types">
+    <md-select ng-model="vm.selectedItem" md-on-open="vm.setSelectedItem()" md-on-close="vm.clearInput()" placeholder="Query Types">
       <md-optgroup label="Query Types">
         <md-option ng-value="item" ng-repeat="item in vm.items">{{item}}</md-option>
       </md-optgroup>

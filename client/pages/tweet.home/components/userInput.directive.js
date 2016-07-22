@@ -24,13 +24,25 @@
     function tweetUserInputCtrl() {
       var vm = this;
       vm.items = ['User Name', 'Key Word'];
-      vm.selectedItem = vm.items[0]
+      vm.selectedItem = vm.items[0];
+      vm.curSelectedItem = vm.selectedItem;
 
       vm.removeSpace = function() {
         if(vm.selectedItem === vm.items[0]){
           vm.userName = vm.userName.split(' ').join('');
         }
       };
+
+      vm.setSelectedItem = function() {
+        vm.curSelectedItem = vm.selectedItem;
+      }
+
+      vm.clearInput = function() {
+        if(vm.curSelectedItem !== vm.selectedItem) {
+          vm.userName = '';
+          vm.curSelectedItem = vm.selectedItem;
+        }
+      }
     }
 
 })();
