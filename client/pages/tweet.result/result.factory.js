@@ -5,8 +5,8 @@
   .module('tweet.result')
     .factory("Result", Result);
 
-    function Result() {
-      var service = {
+    function Result($cookies) {
+      var service = $cookies.getObject('Result') || {
         tweets: {},
         sentimentValue: {},
         query: '',

@@ -8,7 +8,8 @@
     'ngAria',
     'ngMaterial',
     'ngMessages',
-    'ngSanitize'
+    'ngSanitize',
+    'ngCookies'
   ])
 
 })();

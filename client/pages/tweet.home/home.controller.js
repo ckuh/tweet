@@ -5,7 +5,7 @@
   .module('tweet.home', [])
     .controller("HomeController", HomeController);
 
-    function HomeController(Home, Result, $state) {
+    function HomeController(Home, Result, $state, $cookies) {
       var vm = this;
       vm.tweetsLoaded = false;
       vm.sentimentLoaded = false;
@@ -33,6 +33,7 @@
                 Result.sentimentValue = data.sentimentValue;
                 Result.dataLoad = true;
 
+                $cookies.putObject('Result', Result)
                 $state.go('result');
               })
               .catch(function(err) {
