@@ -9,7 +9,8 @@
       var service = {
         tweets: {},
         sentimentValue: {},
-        query: ''
+        query: '',
+        dataLoad: false
       };
 
       return service;

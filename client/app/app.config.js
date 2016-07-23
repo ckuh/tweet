@@ -15,7 +15,7 @@
       })
       .state('result', {
         url: '/result',
-        auth: false,
+        auth: true,
         templateUrl: '../pages/tweet.result/templates/result.html',
         controller: 'ResultController as vm'
       })

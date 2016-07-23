@@ -13,7 +13,7 @@
 
       vm.getTweets = function(userInput, query) {
         Result.query = userInput;
-        
+
         query = query.split(' ').map(function(item, index){
           if(index === 0) {
             return item.toLowerCase();
@@ -31,6 +31,7 @@
               .then(function(data) {
                 console.log('data: ', data);
                 Result.sentimentValue = data.sentimentValue;
+                Result.dataLoad = true;
 
                 $state.go('result');
               })
