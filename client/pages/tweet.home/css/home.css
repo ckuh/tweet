@@ -22,27 +22,3 @@
 #userInputRadio {
   width: 145px;
 }
-
-/*tweets*/
-.tweetsUsername {
-  font-weight: bold;
-}
-
-#vertical-container {
-  height: 400px;
-  width: 100%;
-}
-
-.repeated-item {
-  border-bottom: 1px solid #ddd;
-  box-sizing: border-box;
-  min-height: 40px;
-}
-
-md-virtual-repeat-container {
-  border: solid 1px grey;
-}
-
-.md-virtual-repeat-container .md-virtual-repeat-offsetter div {
-  padding: 10px;
-}
