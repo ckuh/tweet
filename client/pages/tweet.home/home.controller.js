@@ -12,8 +12,7 @@
       vm.tweets = {}
 
       vm.getTweets = function(userInput, query) {
-        Result.query = userInput;
-
+        Result.userInput = userInput;
         query = query.split(' ').map(function(item, index){
           if(index === 0) {
             return item.toLowerCase();
@@ -21,6 +20,8 @@
             return item.charAt(0).toUpperCase() + item.slice(1);
           }
         }).join('');
+        $cookies.put('userInput', userInput);
+        $cookies.put('query', query);
 
         Home.getTweets(userInput, query)
           .then(function(data) {
@@ -32,8 +33,8 @@
                 console.log('data: ', data);
                 Result.sentimentValue = data.sentimentValue;
                 Result.dataLoad = true;
+                $cookies.put('dataLoad', true);
 
-                $cookies.putObject('Result', Result)
                 $state.go('result');
               })
               .catch(function(err) {

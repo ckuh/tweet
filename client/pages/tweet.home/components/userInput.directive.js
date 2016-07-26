@@ -29,7 +29,7 @@
 
       vm.removeSpace = function() {
         if(vm.selectedItem === vm.items[0]) {
-          vm.userName = vm.userName.split(' ').join('');
+          vm.userInput = vm.userInput.split(' ').join('');
         }
       };
 
@@ -39,7 +39,7 @@
 
       vm.clearInput = function() {
         if(vm.curSelectedItem !== vm.selectedItem) {
-          vm.userName = '';
+          vm.userInput = '';
           vm.curSelectedItem = vm.selectedItem;
         }
       }

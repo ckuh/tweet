@@ -1,7 +1,7 @@
 <div layout="column" layout-align="center center" layout-padding>
   <md-content>
-    <form name="userInput" ng-submit="getTweets({userName: vm.userName, selectedItem: vm.selectedItem})">
-      <input class="tweetUserInput" type="text" name="userName" placeholder="User Name" ng-model="vm.userName" ng-change="vm.removeSpace()" ng-trim=false>
+    <form name="userInput" ng-submit="getTweets({userInput: vm.userInput, selectedItem: vm.selectedItem})">
+      <input class="tweetUserInput" type="text" name="userInput" placeholder="Search" ng-model="vm.userInput" ng-change="vm.removeSpace()" ng-trim=false>
     </form>
   </md-content>
 

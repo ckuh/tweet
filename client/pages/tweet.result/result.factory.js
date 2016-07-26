@@ -6,11 +6,12 @@
     .factory("Result", Result);
 
     function Result($cookies) {
-      var service = $cookies.getObject('Result') || {
-        tweets: {},
-        sentimentValue: {},
-        query: '',
-        dataLoad: true
+      var service = {
+        userInput: $cookies.get('userInput') || '',
+        query: $cookies.get('query') || '',
+        tweets: null,
+        sentimentValue: null,
+        dataLoad: $cookies.get('dataLoad') || false
       };
 
       return service;
