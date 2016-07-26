@@ -10,7 +10,7 @@
         tweets: {},
         sentimentValue: {},
         query: '',
-        dataLoad: false
+        dataLoad: true
       };
 
       return service;

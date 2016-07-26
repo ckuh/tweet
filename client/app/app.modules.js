@@ -5,7 +5,8 @@
   .module('tweet', [
     'tweet.dependencies',
     'tweet.home',
-    'tweet.result'
+    'tweet.result',
+    'tweet.shared'
   ])
 
 })();
