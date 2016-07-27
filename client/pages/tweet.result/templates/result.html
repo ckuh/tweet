@@ -1,5 +1,9 @@
+<div class="tweetOption" ng-if="vm.dataLoad">
+  <tweet-option set-indico="vm.setIndico(indicoOption)"></tweet-option>
+</div>
+
 <div class="tweetContainer" layout="column" layout-align="center center" ng-if="vm.dataLoad">
-  <div class="tweetChild">
+  <div class="tweetChild" ng-if="vm.sentimentShow">
     <tweet-sentiment-value sentiment-value="vm.sentimentValue"></tweet-sentiment-value>
   </div>
 

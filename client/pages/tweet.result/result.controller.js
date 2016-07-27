@@ -9,6 +9,20 @@
       var vm = this;
 
       vm.dataLoad = false;
+      vm.emotionShow = false;
+      vm.sentimentShow = true;
+
+      vm.setIndico = function(indicoOption) {
+        switch (indicoOption) {
+          case 'emotion':
+            vm.emotionShow = true;
+            vm.sentimentShow = false;
+            break;
+          default:
+          vm.emotionShow = false;
+          vm.sentimentShow = true;
+        }
+      }
 
       if(!Result.tweets) {
         Home.getTweets(Result.userInput, Result.query)

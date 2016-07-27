@@ -1,0 +1,19 @@
+<md-content class="md-padding">
+  <md-fab-speed-dial md-open="vm.isOpen" md-direction="right" class="md-scale" ng-mouseenter="vm.isOpen=true" ng-mouseleave="vm.isOpen=false">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab md-primary md-fab-center">
+        <i class="material-icons">menu</i>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <md-button aria-label="emotion" class="md-fab md-raised md-mini md-fab-center" ng-click="setIndico({indicoOption: 'emotion'})">
+        <md-tooltip md-direction="bottom" md-visible="tooltipVisible" md-autohide="false">Emotion</md-tooltip>
+        <i class="material-icons">directions_run</i>
+      </md-button>
+      <md-button aria-label="sentiment" class="md-fab md-raised md-mini md-fab-center" ng-click="setIndico({indicoOption: 'sentiment'})">
+        <md-tooltip md-direction="bottom" md-visible="tooltipVisible" md-autohide="false">Sentiment</md-tooltip>
+        <i class="material-icons">sentiment_very_satisfied</i>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+</md-content>
