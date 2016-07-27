@@ -16,7 +16,7 @@ function sentiementPost(params) {
           totalSentiment += currentSentiment;
         })
 
-        resolve({sentimentValue: totalSentiment / res.length});
+        resolve({sentimentValue: Math.round((totalSentiment / res.length) * 100)});
       })
       .catch(function(err) {
         reject(err);
@@ -50,8 +50,8 @@ function emotionPost(params) {
           totalEmotion.joy += currentEmotion.joy;
         })
 
-        _.mapObject(totalEmotion, function(value, key) {
-          return value / res.length;
+        totalEmotion = _.mapObject(totalEmotion, function(value, key) {
+          return Math.round((value / res.length) * 100);
         })
 
         resolve({emotion: totalEmotion});
