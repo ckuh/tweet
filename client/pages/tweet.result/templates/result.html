@@ -1,32 +1,35 @@
+<div class="tweetContainer" layout="column" ng-if="vm.dataLoad">
+  <div layout="column" layout-align="start">
+    <div ng-if="vm.dataLoad" layout=row layout-align="space-between start">
+      <div class="tweetOption">
+        <tweet-option set-indico="vm.setIndico(indicoOption)"></tweet-option>
+      </div>
 
-<div class="tweetContainer" layout="column" layout-align="start" ng-if="vm.dataLoad">
-  <div ng-if="vm.dataLoad" layout=row layout-align="space-between start">
-    <div class="tweetOption">
-      <tweet-option set-indico="vm.setIndico(indicoOption)"></tweet-option>
+      <div class="tweetHome md-padding">
+        <md-button aria-label="home" class="md-fab md-primary md-fab-center" ui-sref="home">
+          <i class="material-icons">home</i>
+        </md-button>
+      </div>
+    </div>
+  </div>
+
+  <div layout="column" layout-align="center">
+    <div class="tweetChild">
+      <md-content layout="row" layout-align="center">
+        <h1 class=".md-display-3">{{vm.userInput}}</h1>
+      </md-content>
     </div>
 
-    <div class="tweetHome md-padding">
-      <md-button aria-label="home" class="md-fab md-primary md-fab-center" ui-sref="home">
-        <i class="material-icons">home</i>
-      </md-button>
+    <div class="tweetChild" ng-if="vm.sentimentShow">
+      <tweet-sentiment-value sentiment-value="vm.sentimentValue"></tweet-sentiment-value>
     </div>
-  </div>
 
-  <div class="tweetChild">
-    <md-content layout="row" layout-align="center">
-      <h1 class=".md-display-3">{{vm.userInput}}</h1>
-    </md-content>
-  </div>
+    <div class="tweetChild" ng-if="vm.emotionShow">
+      <tweet-emotion emotion="vm.emotion"></tweet-emotion>
+    </div>
 
-  <div class="tweetChild" ng-if="vm.sentimentShow">
-    <tweet-sentiment-value sentiment-value="vm.sentimentValue"></tweet-sentiment-value>
-  </div>
-
-  <div class="tweetChild" ng-if="vm.emotionShow">
-    <tweet-emotion emotion="vm.emotion"></tweet-emotion>
-  </div>
-
-  <div class="tweetChild">
-    <tweet-user-tweets tweets="vm.tweets"></tweet-user-tweets>
+    <div class="tweetChild">
+      <tweet-user-tweets tweets="vm.tweets"></tweet-user-tweets>
+    </div>
   </div>
 </div>
