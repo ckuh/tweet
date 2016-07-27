@@ -31,7 +31,7 @@
             Home.getEmotion(Result.tweets)
               .then(function(data) {
                 console.log('emotion: ', data)
-                Result.emotion = data;
+                Result.emotion = data.emotion;
 
                 Home.getSentiment(Result.tweets)
                   .then(function(data) {

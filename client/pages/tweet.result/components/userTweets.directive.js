@@ -2,7 +2,7 @@
   'use strict'
 
   angular
-  .module('tweet.home')
+  .module('tweet.result')
     .directive("tweetUserTweets", tweetUserTweets);
 
     function tweetUserTweets() {
