@@ -25,23 +25,35 @@
 
         Home.getTweets(userInput, query)
           .then(function(data) {
-            console.log('data: ', data);
+            console.log('tweets: ', data);
             Result.tweets = data;
 
-            Home.getSentiment(Result.tweets)
+            Home.getEmotion(Result.tweets)
               .then(function(data) {
-                console.log('data: ', data);
-                Result.sentimentValue = data.sentimentValue;
-                Result.dataLoad = true;
-                $cookies.put('dataLoad', true);
+                console.log('emotion: ', data)
+                Result.emotion = data;
 
-                $state.go('result');
+                Home.getSentiment(Result.tweets)
+                  .then(function(data) {
+                    console.log('sentiment: ', data);
+                    Result.sentimentValue = data.sentimentValue;
+                    Result.dataLoad = true;
+                    $cookies.put('dataLoad', true);
+
+                    $state.go('result');
+                  })
+                  .catch(function(err) {
+                    $cookies.put('dataLoad', false);
+                    console.error('error: ', err);
+                  })
               })
               .catch(function(err) {
+                $cookies.put('dataLoad', false);
                 console.error('error: ', err);
               })
-          })
+            })
           .catch(function(err) {
+            $cookies.put('dataLoad', false);
             vm.tweetsLoaded = false;
             console.error('error: ', err);
           })

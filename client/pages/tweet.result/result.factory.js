@@ -11,6 +11,7 @@
         query: $cookies.get('query') || '',
         tweets: null,
         sentimentValue: null,
+        emotion: null,
         dataLoad: $cookies.get('dataLoad') || false
       };
 

@@ -8,7 +8,8 @@
     function Home($http, $q) {
       var service = {
         getTweets: getTweets,
-        getSentiment: getSentiment
+        getSentiment: getSentiment,
+        getEmotion: getEmotion
       };
 
       function getTweets(userInput, query) {
@@ -46,11 +47,29 @@
         }
 
         function getSentimentFailed(error) {
-          console.error('Failed for links: ', error);
+          console.error('Failed for sentiment: ', error);
           return $q.reject(error);
         }
       }
 
+      function getEmotion(tweets) {
+        return $http({
+          method: 'POST',
+          url: '/api/indico/emotion',
+          data: tweets
+        })
+          .then(getEmotionComplete)
+          .catch(getEmotionFailed);
+
+        function getEmotionComplete (response) {
+          return response.data;
+        }
+
+        function getEmotionFailed (error) {
+          console.error('Failed for emotion: ', error);
+          return $q.reject(error);
+        }
+      }
       return service;
     }
 
