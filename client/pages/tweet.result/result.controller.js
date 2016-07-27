@@ -35,8 +35,8 @@
                     console.error('error: ', err);
                   })
               })
-              .catch(function(data) {
-
+              .catch(function(err) {
+                console.error('error: ', err)
               })
           })
           .catch(function(err) {
