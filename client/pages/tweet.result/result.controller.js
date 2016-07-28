@@ -38,8 +38,12 @@
                 Home.getSentiment(Result.tweets)
                   .then(function(data) {
                     console.log('sentiment: ', data);
+                    if(Result.query === "userName") {
+                      vm.userInput = '@' + Result.tweets[0].user.screen_name
+                    } else {
+                      vm.userInput = Result.userInput;
+                    }
                     Result.sentimentValue = data.sentimentValue;
-                    vm.userInput = Result.userInput;
                     vm.tweets = Result.tweets;
                     vm.sentimentValue = Result.sentimentValue;
                     vm.emotion = Result.emotion;
@@ -57,7 +61,11 @@
             console.error('error: ', err);
           })
       } else {
-        vm.userInput = Result.userInput;
+        if(Result.query === "userName") {
+          vm.userInput = '@' + Result.tweets[0].user.screen_name
+        } else {
+          vm.userInput = Result.userInput;
+        }
         vm.tweets = Result.tweets;
         vm.sentimentValue = Result.sentimentValue;
         vm.emotion = Result.emotion;
