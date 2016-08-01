@@ -9,7 +9,8 @@
     'ngMaterial',
     'ngMessages',
     'ngSanitize',
-    'ngCookies'
+    'ngCookies',
+    'ui.bootstrap'
   ])
 
 })();

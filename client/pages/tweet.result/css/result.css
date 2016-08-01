@@ -21,3 +21,7 @@ md-virtual-repeat-container {
 .md-virtual-repeat-container .md-virtual-repeat-offsetter div {
   padding: 10px;
 }
+
+.sentimentValue {
+  width: 90%;
+}

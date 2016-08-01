@@ -1,8 +1,9 @@
 <div class="md-padding">
   <md-content layout="column" layout-align="center center">
-    <md-content layout="column" layout-align="start">
+    <md-content class="sentimentValue" layout="column" layout-align="start">
       <div ng-repeat="(emotion, value) in vm.emotion">
-        <span class=".md-body-2">{{emotion}}: {{value}}</span>
+        <!-- <span class=".md-body-2">{{emotion}}: {{value}}</span> -->
+        {{emotion}}: <uib-progressbar class="progress-striped active" max="100" value="value" type="success"><i>{{value}}%</i></uib-progressbar>
       </div>
     </md-content>
   </md-content>
