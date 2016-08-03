@@ -25,3 +25,24 @@ md-virtual-repeat-container {
 .sentimentValue {
   width: 90%;
 }
+
+/*progress bar*/
+.anger div {
+  background-color: #F06543 !important;
+}
+
+.suprise div {
+  background-color: #4CB944 !important;
+}
+
+.fear div {
+  background-color: #CF8BA9 !important;
+}
+
+.joy div {
+  background-color: #F5EE9E !important;
+}
+
+.sadness div {
+  background-color: #246EB9 !important;
+}
