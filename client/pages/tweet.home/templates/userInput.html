@@ -1,8 +1,8 @@
 <div layout="column" layout-align="center center" layout-padding>
   <md-content>
-    <form class="tweetUserInputForm" name="userInputForm" ng-submit="userInputForm.$valid && getTweets({userInput: vm.userInput, selectedItem: vm.selectedItem})" novalidate>
+    <form class="tweetUserInputForm" name="vm.userInputForm" ng-submit="vm.userInputForm.$valid && getTweets({userInput: vm.userInput, selectedItem: vm.selectedItem})" novalidate autocomplete="off">
       <input class="tweetUserInput" type="text" name="userInput" placeholder="Search" ng-model="vm.userInput" ng-change="vm.removeSpace()" ng-trim=false required>
-      <div ng-messages="userInputForm.$submitted && userInputForm.userInput.$error" role="alert">
+      <div ng-messages="vm.userInputForm.$submitted && vm.userInputForm.userInput.$error" role="alert">
        <div ng-message="required" class='errorRequired'>This is required</div>
       </div>
     </form>

@@ -39,6 +39,8 @@
 
       vm.clearInput = function() {
         if(vm.curSelectedItem !== vm.selectedItem) {
+          vm.userInputForm.$setPristine();
+          vm.userInputForm.$setUntouched();
           vm.userInput = '';
           vm.curSelectedItem = vm.selectedItem;
         }
