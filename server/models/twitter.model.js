@@ -15,9 +15,12 @@ function userGet(query) {
         var filteredTweets = _.map(tweets, function(tweet) {
           return _.pick(tweet, 'created_at', 'text', 'user', 'retweeted_status');
         })
-        resolve(_.reject(filteredTweets, function(currentTweet){
-          return 'retweeted_status' in currentTweet;
-        }));
+        // remove retweeted
+        // resolve(_.reject(filteredTweets, function(currentTweet){
+        //   return 'retweeted_status' in currentTweet;
+        // }));
+
+        resolve(filteredTweets);
       }
     })
   });

@@ -12,7 +12,6 @@
       vm.tweets = {}
 
       vm.getTweets = function(userInput, query) {
-        Result.userInput = userInput;
         query = query.split(' ').map(function(item, index){
           if(index === 0) {
             return item.toLowerCase();
@@ -20,6 +19,8 @@
             return item.charAt(0).toUpperCase() + item.slice(1);
           }
         }).join('');
+        Result.userInput = userInput;
+        Result.query = query;
         $cookies.put('userInput', userInput);
         $cookies.put('query', query);
 
