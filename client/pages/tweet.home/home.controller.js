@@ -26,37 +26,45 @@
         Home.getTweets(userInput, query)
           .then(function(data) {
             console.log('tweets: ', data);
-            Result.tweets = data;
+            if(data.length) {
+              Result.tweets = data;
 
-            Home.getEmotion(Result.tweets)
+              Home.getEmotion(Result.tweets)
               .then(function(data) {
                 console.log('emotion: ', data)
                 Result.emotion = data.emotion;
 
                 Home.getSentiment(Result.tweets)
-                  .then(function(data) {
-                    console.log('sentiment: ', data);
-                    Result.sentimentValue = data.sentimentValue;
-                    Result.dataLoad = true;
-                    $cookies.put('dataLoad', true);
+                .then(function(data) {
+                  console.log('sentiment: ', data);
+                  Result.sentimentValue = data.sentimentValue;
+                  Result.dataLoad = true;
+                  $cookies.put('dataLoad', true);
 
-                    $state.go('result');
-                  })
-                  .catch(function(err) {
-                    $cookies.put('dataLoad', false);
-                    console.error('error: ', err);
-                  })
+                  $state.go('result');
+                })
+                .catch(function(err) {
+                  $cookies.put('dataLoad', false);
+                  console.error('error: ', err);
+                })
               })
               .catch(function(err) {
                 $cookies.put('dataLoad', false);
                 console.error('error: ', err);
               })
-            })
+            } else {
+              vm.tweetsLoaded = false;
+            }
+          })
           .catch(function(err) {
             $cookies.put('dataLoad', false);
             vm.tweetsLoaded = false;
             console.error('error: ', err);
           })
+      }
+
+      vm.noTweets = function() {
+
       }
     }
 

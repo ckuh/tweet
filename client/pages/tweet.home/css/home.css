@@ -15,10 +15,21 @@
   outline: none;
   padding: 5px;
   font-size: 32px;
-  width: 95%;
+  width: 100%;
   text-align: center;
+}
+
+.tweetUserInputForm {
+  height: 67px;
 }
 
 #userInputRadio {
   width: 145px;
+}
+
+/*error*/
+
+.errorRequired {
+  text-align: center;
+  color: red;
 }
