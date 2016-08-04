@@ -9,8 +9,8 @@
       var vm = this;
 
       vm.dataLoad = false;
-      vm.emotionShow = false;
-      vm.sentimentShow = true;
+      vm.emotionShow = true;
+      vm.sentimentShow = false;
 
       vm.setIndico = function(indicoOption) {
         switch (indicoOption) {
