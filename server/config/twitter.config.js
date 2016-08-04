@@ -1,3 +1,4 @@
+console.log(process.env.TWITTER_CONSUMER_KEY)
 if(!process.env.TWITTER_CONSUMER_KEY) {
   require('./keys.js');
 }
