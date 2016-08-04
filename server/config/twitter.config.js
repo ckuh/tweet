@@ -1,4 +1,6 @@
-require('./keys.js');
+if(!process.env.TWITTER_CONSUMER_KEY) {
+  require('./keys.js');
+}
 var Twitter = require('twitter');
 
 module.exports = new Twitter({
