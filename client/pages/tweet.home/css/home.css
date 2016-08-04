@@ -1,4 +1,7 @@
 /*home*/
+.tweetUserInputFormContainer {
+    width: 90%;
+}
 
 .tweetContainer {
   height: 100%;

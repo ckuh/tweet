@@ -24,7 +24,7 @@
     function tweetUserInputCtrl() {
       var vm = this;
       vm.items = ['User Name', 'Key Word'];
-      vm.selectedItem = vm.items[0];
+      vm.selectedItem = vm.items[1];
       vm.curSelectedItem = vm.selectedItem;
 
       vm.removeSpace = function() {
