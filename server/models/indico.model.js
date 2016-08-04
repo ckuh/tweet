@@ -7,6 +7,14 @@ exports.sentiment = {
 
 function sentiementPost(params) {
   return new Promise(function(resolve, reject) {
+    _.each(params, function(tweet) {
+      if(tweet.retweeted_status) {
+        tweet.text = tweet.retweeted_status.text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
+      } else {
+        tweet.text = tweet.text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
+      }
+    })
+
     var batchInput = _.pluck(params, 'text');
 
     Indico.sentimentHQ(batchInput)
@@ -30,6 +38,14 @@ exports.emotion = {
 
 function emotionPost(params) {
   return new Promise(function(resolve, reject) {
+    _.each(params, function(tweet) {
+      if(tweet.retweeted_status) {
+        tweet.text = tweet.retweeted_status.text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
+      } else {
+        tweet.text = tweet.text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
+      }
+    })
+
     var batchInput = _.pluck(params, 'text');
 
     Indico.emotion(batchInput)

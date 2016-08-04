@@ -27,22 +27,26 @@ md-virtual-repeat-container {
 }
 
 /*progress bar*/
+.emotion div{
+  color: black;
+}
+
 .anger div {
-  background-color: #F06543 !important;
+  background-color: #F06543;
 }
 
 .suprise div {
-  background-color: #4CB944 !important;
+  background-color: #4CB944;
 }
 
 .fear div {
-  background-color: #CF8BA9 !important;
+  background-color: #CF8BA9;
 }
 
 .joy div {
-  background-color: #F5EE9E !important;
+  background-color: #F5EE9E;
 }
 
 .sadness div {
-  background-color: #246EB9 !important;
+  background-color: #246EB9;
 }

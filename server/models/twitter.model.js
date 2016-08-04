@@ -13,6 +13,10 @@ function userGet(query) {
         reject(error)
       } else {
         var filteredTweets = _.map(tweets, function(tweet) {
+          if(tweet.retweeted_status) {
+            tweet.retweeted_status.text = 'RT ' + tweet.retweeted_status.screen_name + ': ' + tweet.retweeted_status.text;
+          }
+
           return _.pick(tweet, 'created_at', 'text', 'user', 'retweeted_status');
         })
         // remove retweeted
@@ -38,6 +42,10 @@ function wordGet(query) {
         reject(error)
       } else {
         var filteredTweets = _.map(tweets.statuses, function(tweet) {
+          if(tweet.retweeted_status) {
+            tweet.retweeted_status.userText = 'RT @' + tweet.retweeted_status.user.screen_name + ': ' + tweet.retweeted_status.text;
+          }
+
           return _.pick(tweet, 'created_at', 'text', 'user', 'retweeted_status');
         })
 
