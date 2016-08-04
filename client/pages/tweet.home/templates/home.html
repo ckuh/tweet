@@ -1,4 +1,11 @@
-<div class="tweetContainer" layout="column" layout-align="center center">
+<div class="tweetHomePage md-padding">
+  <md-button aria-label="home" class="md-fab md-primary md-fab-center" ng-click="vm.showAdvanced($event)">
+    <i class="material-icons">more_horiz</i>
+  </md-button>
+</div>
+
+<div class="tweetContainer" layout="column" layout-align="center end">
+
   <div class="tweetChild">
     <tweet-user-input get-tweets="vm.getTweets(userInput, selectedItem)"><tweet-user-input>
   </div>

@@ -33,3 +33,18 @@
   text-align: center;
   color: red;
 }
+
+.tweetHomePage {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.twitterQuerryTitle h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.twitterQuerry div h4 {
+  margin-bottom: 0;
+}

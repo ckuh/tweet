@@ -5,7 +5,7 @@
   .module('tweet.home', [])
     .controller("HomeController", HomeController);
 
-    function HomeController(Home, Result, $state, $cookies) {
+    function HomeController(Home, Result, $state, $cookies, $mdDialog, $mdMedia) {
       var vm = this;
       vm.tweetsLoaded = false;
       vm.sentimentLoaded = false;
@@ -67,6 +67,36 @@
       vm.noTweets = function() {
 
       }
+
+      vm.showAdvanced = function(ev) {
+          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && vm.customFullscreen;
+          $mdDialog.show({
+            controller: DialogController,
+            templateUrl: '../pages/tweet.home/templates/twitterQuerryApi.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true,
+            fullscreen: useFullScreen
+          })
+          .then(function(answer) {
+            vm.status = 'You said the information was "' + answer + '".';
+          }, function() {
+            vm.status = 'You cancelled the dialog.';
+          });
+        };
+    }
+
+    function DialogController($mdDialog) {
+      var vm = this;
+      vm.hide = function() {
+        $mdDialog.hide();
+      };
+      vm.cancel = function() {
+        $mdDialog.cancel();
+      };
+      vm.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
     }
 
 })();
