@@ -16,8 +16,14 @@ function sentiementPost(params) {
     })
 
     var batchInput = _.pluck(params, 'text');
+    var randomBatchInput = [];
+    for(var i = 0; i < 5; i++) {
+      var random = _.random(0, batchInput.length-1);
+      randomBatchInput.push(batchInput[random]);
+      batchInput.splice(random,1)
+    }
 
-    Indico.sentimentHQ(batchInput)
+    Indico.sentimentHQ(randomBatchInput)
       .then(function(res) {
         var totalSentiment = 0;
         _.each(res, function(currentSentiment) {
@@ -47,8 +53,14 @@ function emotionPost(params) {
     })
 
     var batchInput = _.pluck(params, 'text');
+    var randomBatchInput = [];
+    for(var i = 0; i < 5; i++) {
+      var random = _.random(0, batchInput.length-1);
+      randomBatchInput.push(batchInput[random]);
+      batchInput.splice(random,1)
+    }
 
-    Indico.emotion(batchInput)
+    Indico.emotion(randomBatchInput)
       .then(function(res) {
         var totalEmotion = {
           anger: 0,

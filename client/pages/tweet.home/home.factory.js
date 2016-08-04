@@ -18,7 +18,7 @@
             url: '/api/tweets/' + query,
             params: {
               userInput: userInput,
-              count: 10
+              count: 100
             }
           })
             .then(getTweetsComplete)
