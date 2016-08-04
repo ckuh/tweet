@@ -1,6 +1,11 @@
 /*tweets*/
-.tweetsUsername {
-  font-weight: bold;
+.tweetsUserInput {
+  text-align: center;
+}
+
+.tweetDataContainer {
+  position: absolute;
+  width: 100%;
 }
 
 #vertical-container {

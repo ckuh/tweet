@@ -26,18 +26,18 @@
 
         Home.getTweets(userInput, query)
           .then(function(data) {
-            console.log('tweets: ', data);
+            //console.log('tweets: ', data);
             if(data.length) {
               Result.tweets = data;
 
               Home.getEmotion(Result.tweets)
               .then(function(data) {
-                console.log('emotion: ', data)
+                //console.log('emotion: ', data)
                 Result.emotion = data.emotion;
 
                 Home.getSentiment(Result.tweets)
                 .then(function(data) {
-                  console.log('sentiment: ', data);
+                  //console.log('sentiment: ', data);
                   Result.sentimentValue = data.sentimentValue;
                   Result.dataLoad = true;
                   $cookies.put('dataLoad', true);

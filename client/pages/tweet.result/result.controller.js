@@ -27,17 +27,17 @@
       if(!Result.tweets) {
         Home.getTweets(Result.userInput, Result.query)
           .then(function(data) {
-            console.log('tweets: ', data);
+            //console.log('tweets: ', data);
             Result.tweets = data;
 
             Home.getEmotion(Result.tweets)
               .then(function(data) {
-                console.log('emotion: ', data);
+                //console.log('emotion: ', data);
                 Result.emotion = data.emotion;
 
                 Home.getSentiment(Result.tweets)
                   .then(function(data) {
-                    console.log('sentiment: ', data);
+                    //console.log('sentiment: ', data);
                     if(Result.query === "userName") {
                       vm.userInput = '@' + Result.tweets[0].user.screen_name
                     } else {
