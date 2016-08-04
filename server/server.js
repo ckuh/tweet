@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.set('port', process.env.port || 1337);
+app.set('port', process.env.PORT || 1337);
 
 app.use(express.static('./client'));
 app.use('/api/tweets', routeTweets);
