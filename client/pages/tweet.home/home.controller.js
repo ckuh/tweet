@@ -7,7 +7,7 @@
 
     function HomeController(Home, Result, $state, $cookies, $mdDialog, $mdMedia) {
       var vm = this;
-      vm.tweetsLoaded = false;
+      vm.loadingData = false;
       vm.sentimentLoaded = false;
       vm.tweets = {}
 
@@ -23,7 +23,8 @@
         Result.query = query;
         $cookies.put('userInput', userInput);
         $cookies.put('query', query);
-
+        vm.loadingData = true;
+        
         Home.getTweets(userInput, query)
           .then(function(data) {
             //console.log('tweets: ', data);
@@ -54,12 +55,12 @@
                 console.error('error: ', err);
               })
             } else {
-              vm.tweetsLoaded = false;
+              vm.loadingData = false;
             }
           })
           .catch(function(err) {
             $cookies.put('dataLoad', false);
-            vm.tweetsLoaded = false;
+            vm.loadingData = false;
             console.error('error: ', err);
           })
       }

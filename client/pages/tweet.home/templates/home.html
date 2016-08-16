@@ -4,9 +4,16 @@
   </md-button>
 </div>
 
-<div class="tweetContainer" layout="column" layout-align="center end">
+<div class="tweetContainer" layout="column" layout-align="center center">
 
-  <div class="tweetChild">
+  <div class="tweetChild" ng-hide="vm.loadingData">
     <tweet-user-input get-tweets="vm.getTweets(userInput, selectedItem)"><tweet-user-input>
+  </div>
+
+  <div class="loadContainer" ng-show="vm.loadingData">
+    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+    <div class="bottom-block">
+      <span>Calculating Please Wait...</span>
+    </div>
   </div>
 </div>
